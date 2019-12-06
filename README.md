@@ -158,7 +158,9 @@ Super subToSuper=new Sub();//静态类型是Super，实际类型是Sub
 
 ## 3-6 重写与重载
 
-静态方法不存在**重写**，重写只对可见的实例方法。静态方法只有隐藏。
+**静态方法不存在重写**，重写只对可见的实例方法。静态方法只有隐藏。
+
+com.example.javaBasic.overwrite.StaticMethodNoOverwriteSub
 
 **重载**是根据形参的**静态类型**确定调用的方法版本。
 
@@ -210,3 +212,14 @@ com.example.javaBasic.init.StaticOnlyOnce
 
 * threadlocalmap使用开放定址法解决hash冲突，量小
 * hashmap使用链地址法解决hash冲突，因为量大
+
+
+
+## 3-10 设计模式
+
+四种线程安全单例模式实现：
+
+1. 饿汉模式（其实枚举类也是不给外界实例化机会，变相其实参数都是public static final。枚举与类的根本区别就在构造方法私有。）
+2. 懒汉模式，synchronized getInstance
+3. 在getInstance里面double-check
+4. 内部静态工厂类
